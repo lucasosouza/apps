@@ -1,0 +1,105 @@
+html, body, div, img, h1, h2, h3, h4, h5, h6, a {
+    margin:0px;padding:0px;
+    font-family: helvetica, sans-serif;
+}
+
+a {text-decoration:none;}
+
+html, body { height:100%; width:100%; }
+
+body {
+    background-image: linear-gradient(#E6E2AF, #EFECCA)
+}
+
+.container {
+    height:120%;
+    width:100%;
+    display: flex;
+    flex-flow:column;
+}
+
+.navigation-menu {
+    flex:2;
+    background: rgba(4,99,128, 1);
+    color: #EFECCA;
+    display:flex;
+    align-items:center;
+}
+
+.navigation-menu a {
+    color: #EFECCA;
+    display:block;
+    margin-top:5%;
+    font-size:20px;
+    flex:auto;
+    text-align:center;
+}
+
+.content {
+    flex:10;
+    color:#002F2F;
+    background-image: url("http://cssdioceseofscranton.org/content/wp-content/uploads/2012/07/7-6-12-1.jpg");
+    background-size: cover;
+    display:flex;
+    flex-flow:column;
+    justify-content: flex-end;
+}
+
+.content.opaque {
+}
+
+.dialog {
+    width:70%;
+    height:70%;
+    top:0;
+    left:-1000px;
+    right:0;
+    bottom:0;
+    margin:auto;
+    position:absolute;
+    z-index: 10;
+    background:red;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    opacity:0;
+    transition: left 1s ease, opacity 1s linear, border-radius 1s linear 1s ;
+}
+
+.open {
+    left:0;
+    opacity:1;
+    border-radius:100%;
+}
+
+#wrap {
+    display:flex
+}
+
+.textarea {
+    flex:1;
+}
+
+
+.footer {
+    flex:3;
+    background: rgba(4,99,128, 1);
+    color: #EFECCA;
+}
+
+h1 {
+    font-size:50px;
+    font-weight: 100;
+    font-family: Brush Script MT, cursive;
+    z-index:2;
+    margin-bottom:10%;
+    text-align: center;
+    background-color: rgba(167,163,126,0.5);
+    color: #002F2F;
+    padding:1% 0%;
+    box-shadow: 5px 5px 5px rgba(239,236,202,0.5);
+}
+
+img {
+    z-index:0;
+    max-width:100%;
+    border:50px solid rgb(255,255,255,1);
+}

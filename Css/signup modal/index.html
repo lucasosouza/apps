@@ -1,0 +1,56 @@
+<html>
+<head>
+	<title>Signup Modal</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">        </script>
+    <link rel="stylesheet" href="style.css"></link>	
+</head>
+    <body>
+        <div class="container">
+            <div class="navigation-menu">
+                <a href="#">Home</a>
+                <a href="#">What we do</a>
+                <a href="#" id="signin">Sign In</a>
+            </div>
+            <div class="content">
+            <div class="dialog">
+                <div id="wrap">
+                    Please say something: <textarea></textarea>
+                    <p>This is a sign in form</p>
+                    <p>more and more content</p>               
+                </div>
+            </div>
+                <h1>We specialize in doing random things</h1>
+            </div>
+            <div class="footer"></div>            
+        </div>
+    <script>
+        var active = false;
+        document.querySelector('#signin').onclick = function() {
+            console.log('1')
+            if (!active) {
+                console.log('2')
+                $('.dialog').addClass('open');
+                active = true;
+            } else {
+                console.log('3')
+                $('.dialog').removeClass('open');
+                active = false;
+            }   
+        }
+//        var dialog = document.querySelector('dialog');
+//        document.querySelector('#signin').onclick = function(){
+//            dialog.style.left = 0;
+//            dialog.showModal();
+//            dialog.style.opacity = 0.9;
+//        }
+//        
+//        dialog.addEventListener('close', function(){
+//            dialog.style.opacity = 0
+//            //dialog.style.left = '-300px';
+//        })
+//        
+    </script>        
+    </body>
+</html>
+
+
