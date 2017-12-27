@@ -1,0 +1,45 @@
+<ion-view view-title="Questions" class="question-page">
+  <ion-content>
+
+<button class="button icon-right button-outline button-full button-stable" ng-class="activeForm ? 'ion-close-circled' : 'ion-compose'" ng-click="activateForm()">{{ activateFormButtonText }}</button>
+
+  <form ng-show="activeForm" ng-submit="update()" novalidate>
+  <div class="list list-inset">
+    <label class="item item-input">
+      <input type="text" placeholder="Title" ng-model="newQuestion.title">
+    </label>
+    <label class="item item-input">
+      <textarea rows="6"; placeholder="Content" ng-model="newQuestion.content"></textarea>
+    </label>
+  </div>
+  <div class="padding-horizontal">
+  <button type="submit" class="button icon-right button-block button-outline ion-share button-stable">Post!</button>
+</div>
+</form>
+
+  <div  ng-repeat="(key, question) in questions">
+
+    <div class="card">
+      <div class="item item-text-wrap">
+        <div class="row">
+          <div class="col col-90">
+          <a href="#/tab/answers/{{key}}" ng-click="activateQuestion(question)">
+            <p><strong>{{ question.title }}</strong></p>
+            <p>{{ question.content }}</p>
+          </a>
+          </div>
+          <div class="col col-10">
+            <p style="font-size:20px"> <i class="icon ion-happy positive" ng-click="plusScore(question)"></i></p>
+            <p style="font-size:13px;padding: 5px 0px;text-align:center"><strong>{{ question.score }}</strong></p>
+            <p style="font-size:20px"><i class="icon ion-sad assertive" ng-click="minusScore(question)"></i></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+  </ion-content>
+</ion-view>

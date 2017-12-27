@@ -1,0 +1,35 @@
+<h1 class="title">Recipes</h1>
+
+<div class="wrapper">
+<form ng-submit>
+<div class="recipe-title">
+  <input name="name" type="text" placeholder="A name for your goody">
+</div>
+<div class="recipe-data">
+  <div class="recipe-data-box">
+  <label>Load a picture</label>
+  <input name="picture" type="file">
+  </div>
+
+  <div class="recipe-data-box">
+  <label>What is required to make it:</label>
+  <textarea name="ingredients" placeholder="50g of magic season" ng-model="main.newIngredient" rows=3></textarea>
+  <button class="add-icon" ng-click="main.addIngredient()"> +</button></p>
+  <ol>
+    <li ng-bind="main.newIngredient"></li>
+    <li ng-repeat="ingredient in main.newRecipe.ingredients" ng-bind="ingredient"></li>
+  </ol>
+  </div>
+  
+  <div class="recipe-data-box">
+  <label>Tell us how to prepare this wonderness:</label>
+  <textarea name="steps" placeholder="Take it out from the oven and delight yourself"ng-model="main.newStep" rows=3></textarea>
+  <button class="add-icon" ng-click="main.addStep()"> +</button></p> 
+  <ol>
+    <li ng-repeat="step in main.newRecipe.steps" ng-bind="step"></li>
+  </ol>  
+  </div>
+</div>
+</form>
+
+</div>

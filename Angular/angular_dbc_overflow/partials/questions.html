@@ -1,0 +1,50 @@
+
+
+  <!-- LIST ALL QUESTIONS -->
+<div class="row">
+
+  <div class="col col-sm-6">
+
+  <!-- FORM FOR NEW QUESTION -->
+  <form ng-init="new_question={}" novalidate>
+    <h3>Post new question</h3>
+    Title: <input type="text" ng-model="new_question.title">
+    Content: <input type="text" ng-model="new_question.content">
+    <input type="submit" ng-click="update(new_question)">
+  </form>
+  <div style="color:red">
+    <p><strong>{{ new_question.title }}</strong></p>
+    <p>{{ new_question.content }}</p>
+  </div>
+  <br>
+
+  <div  ng-repeat="(key, question) in data.questions">
+  <div class="col col-sm-2" style="font-size:16px;">
+      <p><span class="glyphicon glyphicon-triangle-top" ng-click="plusScore(question)"> </span></p>
+      <p><span class="glyphicon glyphicon-triangle-bottom" ng-click="minusScore(question)"></span></p>
+      <p> {{ question.score }}</p>
+  </div>
+
+  <div class="col col-sm-10">
+      <p><strong>{{ question.title }}</strong></p>
+      <p>{{ question.content }}</p>
+      <a ui-sref=".answers({id: key})">See answers</a>
+      <br>
+    <hr>
+  </div>
+
+  </div>
+</div>
+
+  <div class="col col-sm-6">
+    <div ui-view></div>
+  </div>
+
+
+</div>
+
+
+
+
+
+

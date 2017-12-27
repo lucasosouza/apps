@@ -1,0 +1,103 @@
+/* basic css reset*/
+html, body, ul, li, input, textarea, div {
+  margin: 0px;
+  padding: 0px;
+  border:0px;
+}
+
+
+div {
+  border: 1px dashed blue;
+}
+
+/* elements */
+.wrapper {
+  display:flex;
+  width:90%;
+  margin-left:5%;
+  flex-flow: column nowrap;
+}
+
+.recipe-title {
+  flex: auto;
+  display:flex;
+  flex-flow: column;
+}
+
+.recipe-title input {
+  flex: auto;
+  min-height: 100%;
+  padding:10px 0px;
+  font-size:28px;
+}
+
+.recipe-data {
+  flex: auto;
+  display: flex;
+}
+
+.recipe-data-box {
+  flex: 1 1 auto;
+  border: 1px solid #ddd;
+  display:flex;
+  flex-flow:column nowrap;
+  transition: all linear 0.25s;
+}
+
+.recipe-data-box:hover, 
+.recipe-data-box:focus {
+  flex: 8 1 auto;
+}
+
+.recipe-data-box label {
+  border-bottom: 1px solid #ddd;
+  padding: 5px 0px;
+}
+
+.recipe-data-box textarea {
+  resize:vertical;
+}
+
+.recipe-data-box ul {
+  flex:auto;
+  justify-content:flex-end;
+}
+
+li {
+}
+
+/* legacy css */
+.title {
+  text-align: center;
+  padding-bottom:10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 0px;
+}
+
+.unstyled-li:nth-child(even) {
+  background-color: #ddd;
+}
+
+.unstyled-li:first-child {
+  border-top: 1px solid #ddd;
+}
+
+.add-icon {
+  float: right;
+  font-size: 20px;
+  background-color: #ddd;
+}
+
+.new-ingredient {
+  width: 85%;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border: none;
+  border-bottom: 1px solid #ddd  
+}
+
+.new-step {
+  border: none;
+  width: 85%;
+  cols: 3;
+}

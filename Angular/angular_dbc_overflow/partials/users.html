@@ -1,0 +1,32 @@
+
+<div ng-show="loggedUser">
+<h3 >Welcome, {{ loggedUser.email }}</h3>
+<button ng-click="logOut()">Log out</button>
+</div>
+
+
+
+<form ng-init="loginUser={}" ng-submit="authUser(loginUser)" novalidate ng-show="!loggedUser">
+  <h3>Log In</h3>
+  Email: <input type="text" ng-model="loginUser.email">
+  Password:  <input type="text" ng-model="loginUser.password">
+  <input type="submit" value="Log In">
+</form>
+<br>
+
+<form ng-init="newUser={}" ng-submit="addUser(newUser)" novalidate ng-show="!loggedUser">
+  <h3>Register</h3>
+  Email: <input type="text" ng-model="newUser.email">
+  Password:  <input type="text" ng-model="newUser.password">
+  <input type="submit" value="Register">
+</form>
+<br>
+
+<h4>Currently registered users:</h4>
+<br>
+<div ng-repeat="user in data.users">
+  <p>{{ user.email }}</p>
+  <hr>
+</div>
+
+

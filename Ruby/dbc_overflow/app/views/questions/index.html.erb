@@ -1,0 +1,14 @@
+<h1>Welcome!</h1>
+
+<p>Quote of the day: <span id="zen-quote" style="color:green"><%= @quote %></span></p>
+
+<h4 class="flash-notice" style="color:blue"></h4>
+
+<%= link_to 'Post new question', new_question_path, remote: true %>
+
+<div id="new-question-box" style="display:none"></div>
+
+<h3>Here are the latest questions asked:</h3>
+
+<div id="questions-list"><%= render @questions %></div>
+

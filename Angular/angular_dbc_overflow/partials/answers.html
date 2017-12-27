@@ -1,0 +1,16 @@
+<h4>{{ data.questions[q].title }}</h4>
+<h5>{{ data.questions[q].content }}</h5>
+
+<br>
+<div ng-repeat="answer in data.questions[q].answers">
+  <p>{{ answer.score }} <span class="glyphicon glyphicon-triangle-top" ng-click="plusScore(answer)"> </span><span class="glyphicon glyphicon-triangle-bottom" ng-click="minusScore(answer)"></span> <strong>Answer: </strong>{{ answer.content }}</p>
+  </br>
+</div>
+
+<form ng-init="new_answer={}" novalidate>
+  </strong>New answer: </strong><input type="text" ng-model="new_answer.content">
+  <input type="submit" ng-click="answer(new_answer)">
+</form>
+
+
+

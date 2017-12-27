@@ -1,0 +1,14 @@
+development:
+  access_key_id: AKIAJ5OSXCPDMRW76IAQ
+  secret_access_key: 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
+  bucket: experiments.moodboard
+
+test:
+  access_key_id: AKIAJ5OSXCPDMRW76IAQ
+  secret_access_key: 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
+  bucket: experiments.moodboard
+
+production:
+  access_key_id: AKIAJ5OSXCPDMRW76IAQ
+  secret_access_key: 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
+  bucket: experiments.moodboard

@@ -1,0 +1,14 @@
+<p><%= answer.content %></p>
+<%= form_for :vote, url: votes_path, method: :post, html: {id: "upvote-answer-#{answer.id}"}, remote: true do |f| %>
+  <%= f.number_field :answer_id, value: answer.id, hidden: true %>
+  <%= f.number_field :user_id, value: answer.user_id, hidden: true %>
+  <%= f.text_field :upvote, value: "1", hidden: true %>
+  <%= f.submit 'Nice!' %>
+<% end %>
+<%= form_for :vote, url: votes_path, method: :post, html: {id: "downvote-answer-#{answer.id}"}, remote: true do |f| %>
+  <%= f.number_field :answer_id, value: answer.id, hidden: true %>
+  <%= f.number_field :user_id, value: answer.user_id, hidden: true %>
+  <%= f.text_field :upvote, value: "0", hidden: true %>
+  <%= f.submit 'Buuuu' %>
+<% end %>
+<p>Votes count: <span id="votes-count-<%= answer.id %>"><%= answer.votes_count %></span></p>

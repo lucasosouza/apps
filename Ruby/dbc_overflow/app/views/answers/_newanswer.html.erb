@@ -1,0 +1,9 @@
+<%= form_for [@question, @question.answers.build], html: {id: 'new-answer-form'}, remote: true do |f| %>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit 'Post answer'%>
+  </p>
+<% end %>

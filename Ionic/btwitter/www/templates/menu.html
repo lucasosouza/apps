@@ -1,0 +1,51 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">More options</h1>
+    </ion-header-bar>
+
+<!--     <ion-content>
+      <ion-list>
+        <ion-item class="item-icon-right" nav-clear menu-close ng-click="postPicture()">
+          Post!
+          <i class="icon ion-ios-camera-outline"></i>
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/menu/tab/popular">
+          Pictures
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/menu/friends">
+          Friends
+        </ion-item>
+        <ion-item nav-clear menu-close href="#/menu/settings">
+          Settings
+        </ion-item>
+      </ion-list>
+    </ion-content> -->
+
+
+    <ion-content has-header="true">
+        <ul class="list sidemenu-list">
+            <a ui-sref="menu.picture" class="item item-icon-left" menu-close>Add Picture<i class="icon ion-ios7-camera"></i></a>
+            <a ui-sref="menu.tab.popular" class="item item-icon-left" menu-close>Gallery<i class="icon ion-ios7-albums"></i></a>
+            <a ui-sref="menu.friends" class="item item-icon-left" menu-close>Friends<i class="icon ion-ios7-people"></i></a>            
+            <a ui-sref="menu.settings" class="item item-icon-left" menu-close>Settings<i class="icon ion-ios7-gear"></i></a>
+        </ul>
+    </ion-content>
+
+
+  </ion-side-menu>
+</ion-side-menus>

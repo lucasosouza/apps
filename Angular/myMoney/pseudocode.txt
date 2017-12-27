@@ -1,0 +1,44 @@
+
+what is this app for:
+this app is made for me
+is to help me take my finance control out of the spreadsheet and into app world
+i will try and deploy to get other users, but it should primarily concern the way I handle my finances
+
+what is I control?
+* fixed expenses
+-- day of the month
+-- value 
+-- what is it
+-- how do I pay / get invoiced
+
+** future expenses
+-- date
+-- value
+-- what is it
+-- how do I pay / get invoiced
+
+* whishlist: things i want/need to buy
+-- month i expect to buy
+-- value
+-- what is it
+-- where can I get it
+
+* amount dedicated to variables expenses
+-- should not be specified beforehand
+
+* overall dashboard with
+-- available in the beggining of the month
+
+-- basic income
+-- other incomes
+-- total income
+
+-- debts / financing
+-- fixed expenses
+-- variable expenses
+-- future/extraordinary expenses
+
+-- available at the end of the month
+
+datamodel
+

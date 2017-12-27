@@ -1,0 +1,50 @@
+pseudocode.txt
+
+Videotweet
+- user can register
+- user can post tweets
+- user has a feed where he can see the latest tweets
+++ feed can be customized to show overall tweets or just from friends
+- user can search for other users and add as a friend
+
+
+STRETCH
+- user can retweet
+- user can like or dislike a tweet
+- user can tag a tweet
+- user can search tweets by tagss
+
+video instagram
+
+STATES
+Tabs
+  Following, Popular and Liked will share the same template and the same controller
+  But a different route
+  And a different resolve
+  resolve is gonna filter only the videos pertaining to the category selected
+    click on any tweet will popup modal, where video will start to play
+    all comments should show below the video
+    new modal will have options : like and comment;
+Settings
+LogIn/Logout
+Followers
+Tweet
+
+
+VIEWS
+Tab
+  Following
+  Popular
+  Liked
+SideMenu
+  Tweet
+  Followers
+  Settings
+  Log In/Log Out
+SplashScreen
+
+
+
+
+
+

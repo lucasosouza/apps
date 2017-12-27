@@ -1,0 +1,59 @@
+<ion-view view-title="Users" class="user-page">
+  <ion-content>
+
+  <div style="padding:40px 0">
+
+  <form ng-submit="logIn()" novalidate ng-show="!loggedUser">
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Email" ng-model="loginUser.email">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Password" ng-model="loginUser.password">
+      </label>
+    </div>
+    <div class="padding">
+     <button type="submit" class="button  icon-right ion-log-in button-block button-outline button-balanced">Sign In</button>
+    </div>
+  </form>
+
+  <form ng-submit="addUser()" novalidate ng-show="!loggedUser" class="padding-top">
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Email" ng-model="newUser.email">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Password" ng-model="newUser.password">
+      </label>
+    </div>
+    <div class="padding">
+     <button type="submit" class="button icon-right ion-plus button-block button-outline button-positive">New user?</button>
+    </div>
+  </form>
+
+  <button class="button button-full button-small button-assertive" ng-show="errorMessage">
+  {{ errorMessage }}
+</button>
+
+
+  <div class="card" ng-show="loggedUser">
+    <div class="item item-text-wrap" style="text-align:center;">
+      {{ loggedUser.username }} logged in
+    </div>
+  </div>
+
+  <div class="row row-bottom">
+    <div class="col">
+  <div class="padding"  ng-show="loggedUser">
+    <button class="button icon-right ion-log-out button-block button-assertive button-outline" ng-click="logOut()">Log out</button>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+
+
+  </ion-content>
+</ion-view>

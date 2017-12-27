@@ -1,0 +1,7 @@
+applications:
+- services:
+  - visual-recognition-service
+  name: visual-recognition-nodejs-lucasosouza
+  command: node app.js
+  path: .
+  memory: 128M

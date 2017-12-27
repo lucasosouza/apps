@@ -1,0 +1,15 @@
+<h1>Edit question</h1>
+
+<%= form_for :question, url: question_path(@question), method: :patch do |f| %>
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+  <p>
+    <%= f.submit 'Update question'%>
+  </p>
+<% end %>

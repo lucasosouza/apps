@@ -1,0 +1,26 @@
+<ion-view view-title="Facts" class="fact-page">
+  <ion-content>
+
+    <div class="list list-inset">
+      <div class="item" ng-repeat="fact in facts">
+        <p>{{ fact.title }}</p>
+        <p>{{ fact.story }}</p>
+      </div>
+    </div>
+
+    <form ng-submit="update()" novalidate>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="text" placeholder="Title" ng-model="new_fact.title">
+        </label>
+        <label class="item item-input">
+          <textarea placeholder="Story" ng-model="new_fact.story"></textarea>
+        </label>
+      </div>
+      <div class="padding-horizontal">
+        <button type="submit" class="button icon-right button-block button-outline ion-share button-stable">Publish!</button>
+      </div>
+    </form>
+
+  </ion-content>
+</ion-view>

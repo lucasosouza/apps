@@ -1,0 +1,15 @@
+<h3>Fixed Expenses</h3>
+<div ng-repeat="expense in fixed.expenses">
+<p ng-click="editValue=true" ng-hide="editValue">{{ expense.value }}</p>
+<form ng-show="editValue" ng-submit="fixed.update(expense)">
+	<input ng-model="expense.value" >
+	<input type="submit" value="Update" >
+</form>
+<button ng-click="fixed.destroy({_id: expense._id})">Delete</button>	
+</div>
+
+<hr>
+<form novalidate ng-submit="fixed.add()">
+	<input type="number" ng-model="fixed.newExpense.value">
+	<input type="submit">
+</form>

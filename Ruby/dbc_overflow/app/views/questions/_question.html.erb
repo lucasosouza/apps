@@ -1,0 +1,18 @@
+<div>
+  <p><%= question.title %></p>
+  <p><%= question.content %></p>
+  <p>Points: <span id ="votes-count-<%= question.id %>"><%= question.votes_count %></span></p>
+  <%= link_to 'Check answers', question_path(question.id) %>
+  <%= form_for :vote, url: votes_path, method: :post, html: {id: "upvote-question-#{question.id}"}, remote: true do |f| %>
+    <%= f.number_field :question_id, value: question.id, hidden: true %>
+    <%= f.number_field :user_id, value: question.user_id, hidden: true %>
+    <%= f.text_field :upvote, value: "1", hidden: true %>
+    <%= f.submit 'Nice!' %>
+  <% end %>
+  <%= form_for :vote, url: votes_path, method: :post, html: {id: "downvote-question-#{question.id}"}, remote: true do |f| %>
+    <%= f.number_field :question_id, value: question.id, hidden: true %>
+    <%= f.number_field :user_id, value: question.user_id, hidden: true %>
+    <%= f.text_field :upvote, value: "0", hidden: true %>
+    <%= f.submit 'Buuuu' %>
+  <% end %>
+</div>

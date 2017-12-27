@@ -1,0 +1,5 @@
+$("#questions-list").append("<%= j (render @question) %>");
+$(".flash-notice").html("Your question was posted successfully");
+setTimeout(function(){
+  $(".flash-notice").empty();
+},1500);

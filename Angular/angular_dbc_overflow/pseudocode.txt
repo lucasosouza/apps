@@ -1,0 +1,29 @@
+pseudocode.txt
+//features
+
+//show all questions - ok
+//add a question - ok
+//click on a question and see the answers - use state
+
+
+//javascript data model
+//question
+
+// question
+//   title
+//   content
+//   user_id
+//   answers
+//     content
+//     user_id
+
+// user
+//   username
+//   email
+//   password
+
+// vote
+//   answer_id
+//   question_id
+//   user_id
+//   upvote

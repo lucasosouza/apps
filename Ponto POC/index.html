@@ -1,0 +1,51 @@
+<html ng-app="dbcOverflow">
+
+	<head>
+	  <meta charset="UTF-8">
+	</head>
+
+	<body>
+
+		<div class='container' ng-controller='homeCtrl'>
+
+		<h1>Play</h1>
+		<hr>
+
+		<button ng-click='play()'>Press it</button>
+		<h1 ng-bind='number'></h1>
+		<hr>
+
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script>
+			var app = angular.module('dbcOverflow', []);
+
+			app.controller('homeCtrl', function($http, $scope, $interval){
+
+				function checkN (){
+					$http.get('https://dbc-overflow.firebaseio.com/bin.json')
+						.success(function(data){	
+							console.log(data)
+							$scope.number=data.bin
+						})
+				}
+
+				$scope.play = function(){
+					$http.put('https://dbc-overflow.firebaseio.com/bin.json', '{"bin": 1}')
+					.success(function(data){	
+						console.log(data)
+						$scope.number=data.bin
+					})
+				}
+
+				$interval(checkN, 1000)
+
+			})
+		</script>
+		
+	</body>
+
+
+</html>
+

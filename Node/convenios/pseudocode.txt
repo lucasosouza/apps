@@ -1,0 +1,20 @@
+
+
+pseudocode.txt
+
+eh possivel
+fazer pela proposta
+pegar os dados de la, identificar os responsaveis e buscar coincindencias
+
+depois fazer o mesmo pelos convenios
+
+node server - 
+multithreaded by default
+non-blocking
+faster than ruby without using hydra
+
+it means on front end, that is also javascript, does it requests things in the same way?
+why I'm so afraid of having a back end, even if only to serve static pages, and perform more complex tasks when required?
+server can run anything that client side js would run since is the samve google chrome v8 engine, running ES5. Plus node specific querks, like the common js require pattern (module, exports and require), the multi-threaded pattern new stuff such as the stream and socket.io, and others
+
+

@@ -1,0 +1,78 @@
+<ion-view view-title="{{title}}">
+
+
+<ion-content>
+
+<ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+<ion-slide  ng-repeat="pic in pics">
+
+<div class="list card">
+  <div class="item item-header card-header">
+    <h2 class="title">{{ pic.title }}</h2>
+  </div>
+  <div class="item item-image">
+    <img class="full-image" ng-src="{{pic.url}}">
+  </div>
+
+
+  <div class="item hcenter">
+    <div class="padding-top">
+      <div class="row">
+        <div class="col col-50">
+          <button class="button button-full button-positive" ng-click="like(pic)">
+            <i class="icon ion-thumbsup"></i>
+            <strong> {{ pic.likes }}</strong>
+          </button>
+        </div>
+        <div class="col col-50">
+          <button class="button button-full button-assertive" ng-click="dislike(pic)">
+            <i class="icon ion-thumbsdown"></i>
+            <strong> {{ pic.dislikes }}</strong>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="list list-inset">
+  <p class="item" ng-repeat='comment in pic.comments'>
+    {{ comment }}
+  </p>
+  <label class="item item-input item-icon-right new-comment">
+    <input type="text" placeholder="Type your comment here..." ng-model="newComment" />
+</div>
+
+<!--     <button class="button button-clear button-full button-positive" ng-click="addComment(pic, newComment);newComment = ''">
+    <i class="icon ion-ios7-plus-outline positive"></i>
+    </button> -->
+
+    <div class="hcenter">
+    <a class="button button-icon icon ion-ios7-plus-outline" ng-click="addComment(pic, newComment);newComment = ''"></a>
+	  </div>
+
+<h3>{{ newComment }}</h3>
+
+<!-- <div class="row">
+
+<div class="col col-33"></div>
+<div class="col col-33"></div>
+<div class="col col-33">
+  <button type="submit" class="button button-clear button-full button-positive" ng-click="addComment(pic, newComment);newComment=''">
+    <i class="ion-ios7-plus-outline" style="font-size:40px"></i>
+  </button>
+</div>
+
+</div>
+ -->
+
+</ion-slide>
+</ion-slide-box>
+
+
+</ion-content>
+</ion-view>
+
+
+
+</div>

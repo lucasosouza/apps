@@ -1,0 +1,46 @@
+
+expenses
+
+-- date
+-- value
+-- description
+-- payment_how
+-- recurrent (yes or no)
+-- day of the month
+
+items 
+
+-- when (in days, months or years)
+-- value
+-- description
+-- found_where
+
+incomes
+
+-- date (month and year)
+-- value
+-- description
+-- type (basic or other)
+
+mortgage
+
+-- date
+-- value
+-- description
+-- payment_how
+
+budget
+
+-- date(month and year)
+-- category
+-- amount
+
+screens
+all on one screen
+top left - fixed expenses
+middle left - future expenses
+top right - mortgages
+middle right - budget allocated
+bottom - dashboard 12 months
+
+

@@ -1,0 +1,18 @@
+<h1>Buy Page</h1>
+<ul ng-repeat="item in items">
+	<li>{{ item.name }}</li>
+	<li>{{ item.color }}</li>
+	<li>{{ item.price }}</li>
+	<button ng-click="remove(item)">Remove</button>
+</ul>
+
+<form ng-submit="add(newItem)">
+<input type="text" placeholder="name" ng-model="newItem.name">
+<input type="text" placeholder="color" ng-model="newItem.color">
+<input type="number" placeholder="number" ng-model="newItem.price">
+<input type="submit">
+</form>
+
+<p>{{ newItem.name }}</p>
+<p>{{ newItem.color }}</p>
+<p>{{ newItem.price }}</p>

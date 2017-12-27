@@ -1,0 +1,7 @@
+= simple_form_for(@design) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :title
+    = f.input :photo, as: :file
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="myMoney">
+<head>
+	<meta charset="UTF-8">
+	<title>My Money</title>
+  <script src="libraries/angular.js"></script>
+  <script src="libraries/angular-ui-router.js"></script>
+  <script src="libraries/angular-resource.js"></script>
+  <script src="app.js"></script>
+  <script src="factories/expensesService.js"></script>
+  <script src="fixedExpenses/fixedExpensesCtrl.js"></script>
+
+  <link rel="stylesheet" href="libraries/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">	
+</head>
+<body>
+	<div class="page-header text-center">
+		<h1 class="header">My Money</h1>	
+	</div>
+	<div class="container">
+		<div class="row first-row">
+			<div class="col col-sm-6 text-center">
+				<div ui-view="fixed-expenses"></div>
+			</div>
+			<div class="col col-sm-6 text-center">
+				<div ui-view="future-expenses"></div>
+			</div>
+		</div>
+		<div class="row second-row">
+			<div class="col col-sm-6 text-center">
+				<div ui-view="mortgage"></div>
+			</div>
+			<div class="col col-sm-6 text-center">
+				<div ui-view="budget"></div>
+			</div>
+		</div>
+		<div class="row third-row">
+			<div class="col col-sm-12 text-center">
+				<div ui-view="dashboard"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

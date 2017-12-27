@@ -1,0 +1,38 @@
+<div ng-controller="BudgetCtrl as budget">
+  <md-toolbar layout-align="center center" md-theme="main-yellow" class="md-primary">
+    <h2 class="md-display-3">Budget</h2>
+  </md-toolbar>
+
+  <div ng-if="fixed.message">{{ fixed.message }}</div>
+
+<div layout="column" layout-fill>
+  <md-whiteframe class="md-whiteframe-z1" layout  layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Income per month</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex>{{ budget.totalIncome | currency}}</div>
+  </md-whiteframe>  
+  <md-whiteframe class="md-whiteframe-z1" layout  layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Fixed expenses per month</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex>{{ budget.fixedExpenses | currency}}</div>
+  </md-whiteframe>  
+  <md-whiteframe class="md-whiteframe-z1" layout  layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Expenses to be paid</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex>{{ budget.variableExpenses | currency}}</div>
+  </md-whiteframe>
+  <br>  
+  <md-whiteframe class="md-whiteframe-z1" layout  layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Remaining</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex>{{ budget.remaining | currency}}</div>
+  </md-whiteframe>  
+
+
+</div>
+
+ </div>

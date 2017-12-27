@@ -1,0 +1,45 @@
+/* Empty. Add your own CSS if you like */
+.interaction-positive {
+  /* border: 1px solid RoyalBlue ; */
+  color: RoyalBlue ;
+  font-size:24px;
+}
+
+.interaction-negative {
+  /* border: 1px solid OrangeRed ; */
+  color: OrangeRed ;
+  font-size:24px;
+}
+
+.card-header {
+  text-align: center;
+}
+.title-card-header{
+  color:White;
+}
+
+ion-content {
+  background-color: WhiteSmoke ;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nostyling{
+  border:0px;
+  padding:0px;
+  margin:0px;
+}
+
+.new-comment {
+  background-color: #eee;
+}
+
+.hcenter{
+  text-align: center;
+}
+
+.sidemenu-list{
+	color: #666;
+}

@@ -1,0 +1,109 @@
+<div ng-controller="FixedCtrl as fixed">
+  <md-toolbar layout-align="center center" md-theme="main-red" class="md-primary">
+    <h2 class="md-display-3">Fixed expenses per month</h2>
+  </md-toolbar>
+
+  <div ng-if="fixed.message">{{ fixed.message }}</div>
+
+<div layout="column" layout-fill>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" class="md-accent" ng-style="{'background': '#bbb', color: 'white'}">
+    <div flex>Expense</div>
+    <div flex>Price</div>
+    <div hide-sm flex>To be paid by</div>
+    <div hide-sm flex>Payment Details</div>
+    <div flex='5' flex-sm='10'></div>
+    <div flex='5' flex-sm='10'></div>    
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" ng-repeat="expense in fixed.expenses">
+    <div flex>{{ expense.value.name }}</div>
+    <div flex>{{ expense.value.price | currency}}</div>
+    <div hide-sm flex>{{ expense.value.paymentDay | ordinal}}</div>
+    <div hide-sm flex>{{ expense.value.paymentDetails }}</div>
+    <div flex='5' flex-sm='10'>
+      <md-button aria-label="edit" class="md-fab" type="button" ng-style="{'height': '30px', 'width': 'auto'}" ng-click="fixed.edit($index)">
+        <ng-md-icon icon="edit" size="20" style="fill:#eee;">
+        </ng-md-icon>
+      </md-button>
+    </div>
+    <div flex='5' flex-sm='10'>
+      <md-button aria-label="remove" class="md-fab" type="button" ng-style="{'height': '30px', 'width': 'auto'}" ng-click="fixed.remove($index)">
+        <ng-md-icon icon="delete" size="20" style="fill:#eee;">
+        </ng-md-icon>
+      </md-button>
+    </div>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Total Fixed Expenses</div>
+    <div flex>{{ fixed.monthlySum | currency}}</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex='5' flex-sm='10'></div>
+    <div flex='5' flex-sm='10'></div>        
+  </md-whiteframe>  
+</div>
+
+
+  <form ng-submit="fixed.add()" name="fixed.expenseForm" novalidate>
+  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" layout="row" layout-margin layout-align="center center ">
+    <md-input-container flex>
+      <label>Expense</label>
+      <input 
+      type="text" 
+      name = "ename" 
+      ng-model="fixed.newExpense.name" 
+      required>
+      <div ng-messages="fixed.expenseForm.ename.$error">
+        <div ng-message="required">required</div>
+      </div>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Price</label>
+      <input 
+      type="number" 
+      name= "price"
+      ng-model="fixed.newExpense.price" 
+      required>
+      <div ng-messages="fixed.expenseForm.price.$error">
+        <div ng-message="required">required</div>
+      </div>      
+    </md-input-container>
+    <md-input-container>
+    </md-input-container>
+    <md-input-container ng-if="fixed.showDetails" flex>
+      <label>Payment Day</label>
+      <input 
+      type="number" 
+      min="1"
+      max="31"
+      value="1"
+      name = "paymentDay" 
+      ng-model="fixed.newExpense.paymentDay" 
+      >
+      <div ng-messages="fixed.expenseForm.paymentDay.$error">
+        <div ng-message="optional">optional</div>
+      </div>      
+    </md-input-container>
+    <md-input-container ng-if="fixed.showDetails" flex>
+      <label>Payment Details</label>
+      <input 
+      type="text" 
+      name = "paymentDetails" 
+      ng-model="fixed.newExpense.paymentDetails"
+      >
+    <div ng-messages="fixed.expenseForm.paymentDetails.$error">
+      <div ng-message="optional">optional</div>
+    </div>          
+    </md-input-container> 
+    <md-button aria-label="save" class="md-fab md-primary" type="submit" ng-disabled="fixed.expenseForm.$invalid" ng-style="{'margin-right': '10px'}">
+      <md-tooltip>Save</md-tooltip>
+      <ng-md-icon icon="save" size="30" style="fill:#eee"></ng-md-icon>
+    </md-button>        
+    <md-button aria-label="save" class="md-fab md-primary" type="button" ng-disabled="fixed.expenseForm.$pristine" ng-click="fixed.clearForm()">
+      <md-tooltip>Clear</md-tooltip>
+      <ng-md-icon icon="clear" size="30" style="fill:#eee"></ng-md-icon>
+    </md-button>        
+  </md-content>
+
+
+  </form>
+ </div>

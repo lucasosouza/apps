@@ -1,0 +1,17 @@
+
+<h4 style="color:blue"><%= flash[:notice] %></h4>
+
+<h3>Question</h3>
+
+<p><strong>Question: </strong><%= @question.title %></p>
+<p><strong>Description: </strong><%= @question.content %></p>
+<p><strong>Answers: </strong>
+<div id="answers-list"><%= render @question.answers %></div>
+
+
+<%= link_to 'Delete question', question_path(@question.id), method: :delete, data: {confirm: 'Are you sure?'} %>
+<%= link_to 'Back', root_path %>
+
+<br>
+<%= link_to 'Post new answer', new_question_answer_path(@question.id), remote: true %>
+<div id="new-answer-box" style="display:none"></div>

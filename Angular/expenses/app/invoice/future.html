@@ -1,0 +1,106 @@
+<div ng-controller="FutureCtrl as future">
+  <md-toolbar layout-align="center center" md-theme="main-green" class="md-primary">
+    <h2 class="md-display-3">Expenses to be paid</h2>
+  </md-toolbar>
+
+  <div ng-if="future.message">{{ future.message }}</div>
+
+<div layout="column" layout-fill>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" class="md-accent" ng-style="{'background': '#bbb', color: 'white'}">
+    <div flex>Expense</div>
+    <div flex>Price</div>
+    <div hide-sm flex>To be paid by</div>
+    <div hide-sm flex>Payment Details</div>
+    <div flex='5' flex-sm='10'></div>
+    <div flex='5' flex-sm='10'></div>    
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" ng-repeat="invoice in future.invoices">
+    <div flex>{{ invoice.value.name }}</div>
+    <div flex>{{ invoice.value.price | currency}}</div>
+    <div hide-sm flex>{{ invoice.value.paymentDate | date:'mediumDate'}}</div>
+    <div hide-sm flex>{{ invoice.value.paymentDetails }}</div>
+    <div flex='5' flex-sm='10'>
+      <md-button aria-label="edit" class="md-fab" type="button" ng-style="{'height': '30px', 'width': 'auto'}" ng-click="future.edit($index)">
+        <ng-md-icon icon="edit" size="20" style="fill:#eee;">
+        </ng-md-icon>
+      </md-button>
+    </div>
+    <div flex='5' flex-sm='10'>
+      <md-button aria-label="remove" class="md-fab" type="button" ng-style="{'height': '30px', 'width': 'auto'}" ng-click="future.remove($index)">
+        <ng-md-icon icon="delete" size="20" style="fill:#eee;">
+        </ng-md-icon>
+      </md-button>
+    </div>
+  </md-whiteframe>
+  <md-whiteframe class="md-whiteframe-z1" layout layout-fill layout-align="center center" class="md-accent" ng-style="{'color': 'black'}">
+    <div flex>Total to be paid</div>
+    <div flex>{{ future.totalSum | currency}}</div>
+    <div hide-sm flex></div>
+    <div hide-sm flex></div>
+    <div flex='5' flex-sm='10'></div>
+    <div flex='5' flex-sm='10'></div>        
+  </md-whiteframe>  
+</div>
+
+
+  <form ng-submit="future.add()" name="future.invoiceForm" novalidate>
+  <md-content md-theme="docs-dark" class="md-padding" layout="row" layout-sm="column" layout="row" layout-margin layout-align="center center ">
+    <md-input-container flex>
+      <label>Expense</label>
+      <input 
+      type="text" 
+      name = "ename" 
+      ng-model="future.newInvoice.name" 
+      required>
+      <div ng-messages="future.invoiceForm.ename.$error">
+        <div ng-message="required">required</div>
+      </div>
+    </md-input-container>
+    <md-input-container flex>
+      <label>Price</label>
+      <input 
+      type="number" 
+      name= "price"
+      ng-model="future.newInvoice.price" 
+      required>
+      <div ng-messages="future.invoiceForm.price.$error">
+        <div ng-message="required">required</div>
+      </div>      
+    </md-input-container>
+    <md-input-container>
+    </md-input-container>
+    <md-input-container ng-if="future.showDetails" flex>
+      <label>Approximate Date</label>
+      <input 
+      type="date" 
+      name="paymentDate"
+      ng-model="future.newInvoice.paymentDate"
+      >
+      <div ng-messages="future.invoiceForm.paymentDate.$error">
+        <div ng-message="optional">required</div>
+      </div>      
+    </md-input-container>
+    <md-input-container ng-if="future.showDetails" flex>
+      <label>Payment Details</label>
+      <input 
+      type="text" 
+      name="paymentDetails" 
+      ng-model="future.newInvoice.paymentDetails"
+      >
+    <div ng-messages="future.invoiceForm.paymentDetails.$error">
+      <div ng-message="optional">optional</div>
+    </div>          
+    </md-input-container> 
+    <md-button aria-label="save" class="md-fab md-primary" type="submit" ng-disabled="future.invoiceForm.$invalid" ng-style="{'margin-right': '10px'}">
+      <md-tooltip>Save</md-tooltip>
+      <ng-md-icon icon="save" size="30" style="fill:#eee"></ng-md-icon>
+    </md-button>        
+    <md-button aria-label="clear" class="md-fab md-primary" type="button" ng-disabled="future.invoiceForm.$pristine" ng-click="future.clearForm()">
+      <md-tooltip>Clear</md-tooltip>
+      <ng-md-icon icon="clear" size="30" style="fill:#eee"></ng-md-icon>
+    </md-button>        
+  </md-content>
+
+
+  </form>
+ </div>

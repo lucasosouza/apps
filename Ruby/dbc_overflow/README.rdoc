@@ -1,0 +1,46 @@
+== README
+
+*About
+This app is a Stack Overflow clone, developed in Ruby on Rails, strictly for learning purposes.
+
+It was developed under TDD methodology.
+
+*Features
+MVP: user, questions and answers
+Stretch: votes, comments, points and bages
+
+* Ruby version
+Using Ruby 4.1.5, latest version available at time of deployment
+
+* System dependencies
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
+
+*database model
+user
+question
+answer
+
+votes
+answer or question can be voted
+
+question_id
+answer_id
+user_id
+upvote :boolean
